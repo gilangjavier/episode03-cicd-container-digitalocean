@@ -5,7 +5,7 @@
 Github Accounts.<br>
 Digital Ocean Accounts.<br>
 DockerHub Accounts.<br>
-SonarCloud Accounts.<br>
+SonarQube.<br>
 Jenkins Server.<br>
 Docker Server.<br>
 Load Balancer From Digital Ocean.<br>
