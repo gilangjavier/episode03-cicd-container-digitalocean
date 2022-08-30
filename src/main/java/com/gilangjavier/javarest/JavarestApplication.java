@@ -13,24 +13,22 @@ public class JavarestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JavarestApplication.class, args);
 	}
-	
-	public class User {
-		private String firstName;
-		private String lastName;
-		private String email;
-		public User(String firstName, String lastName, String email) {
-			this.firstName = firstName;
-			this.lastName = lastName;
-			this.email = email;
-		}
-		// Generate toString method
+}
+public class User {
+	private String firstName;
+	private String lastName;
+	private String email;
+	public User(String firstName, String lastName, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
-	public class UserController {
-    	@GetMapping("/read/one")
-    	public String readUser(){
-        	User user = new User("John","doe","John@javadev.com");
-        	return user.toString();
-		}
+	// Generate toString method
+}
+public class UserController {
+	@GetMapping("/read/one")
+	public String readUser(){
+		User user = new User("John","doe","John@javadev.com");
+		return user.toString();
 	}
-
 }
