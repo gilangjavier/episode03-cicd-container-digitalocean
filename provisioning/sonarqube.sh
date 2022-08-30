@@ -6,6 +6,7 @@ fs.file-max=65536
 ulimit -n 65536
 ulimit -u 4096
 EOT
+
 cp /etc/security/limits.conf /root/sec_limit.conf_backup
 cat <<EOT> /etc/security/limits.conf
 sonarqube   -   nofile   65536
@@ -37,7 +38,7 @@ sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.6.
 sudo unzip sonarqube-9.6.0.59041.zip
 sudo mv sonarqube-9.6.0.59041 /opt/sonarqube
 sudo groupadd sonar
-sudo useradd -d /opt/sonarqube -g sonar sonar
+sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
 sudo chown sonar:sonar /opt/sonarqube -R
 cp /opt/sonarqube/conf/sonar.properties /root/sonar.properties_backup
 cat <<EOT> /opt/sonarqube/conf/sonar.properties
@@ -94,6 +95,7 @@ server{
     }
 }
 EOT
+
 ln -s /etc/nginx/sites-available/sonarqube /etc/nginx/sites-enabled/sonarqube
 systemctl enable nginx.service
 echo "System reboot in 30 sec"
