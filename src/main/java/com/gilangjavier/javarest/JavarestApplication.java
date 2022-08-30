@@ -12,14 +12,3 @@ public class JavarestApplication {
 		SpringApplication.run(JavarestApplication.class, args);
 	}
 }
-
-
-@RestController
-@RequestMapping("/user")
-public class UserController {
-    @GetMapping("/read/one")
-    public String readUser(){
-        User user = new User("John","doe","John@javadev.com");
-        return user.toString();
-    }
-}
