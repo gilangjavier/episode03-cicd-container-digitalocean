@@ -1,6 +1,5 @@
 #! /bin/bash
 cp /etc/sysctl.conf /root/sysctl.conf_backup
-cat <<eot>> /etc/sysctl.conf
 cat <<EOT> /etc/sysctl.conf
 vm.max_map_count=262144
 fs.file-max=65536
