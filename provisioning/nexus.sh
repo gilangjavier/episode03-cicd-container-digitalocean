@@ -2,10 +2,12 @@
 sudo apt-get update
 sudo apt install openjdk-8-jre-headless -y
 cd /opt
-sudo wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
-tar -zxvf latest-unix.tar.gz
-sudo mv /opt/nexus-3.41.1-01 /opt/nexus
-sudo chown -R nexus.nexus /opt/nexus
+sudo wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz -O nexus.tar.gz
+sudo tar xzvf nexus.tar.gz
+sudo mv nexus-3.41.1-01 nexus
+sudo rm -rf /opt/nexus.tar.gz
+sudo useradd nexus
+sudo chown -R nexus:nexus /opt/nexus
 sudo chown -R nexus:nexus /opt/sonatype-work
 sudo cat <<EOT>> /etc/systemd/system/nexus.service
 [Unit]
