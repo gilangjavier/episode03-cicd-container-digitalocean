@@ -6,8 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@RestController
-@RequestMapping("/user")
 public class JavarestApplication {
 
 	public static void main(String[] args) {
@@ -25,6 +23,9 @@ public class User {
 	}
 	// Generate toString method
 }
+
+@RestController
+@RequestMapping("/user")
 public class UserController {
 	@GetMapping("/read/one")
 	public String readUser(){
